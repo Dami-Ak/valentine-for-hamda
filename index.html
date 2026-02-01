@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFD6E8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #FFF9F5;
+            padding: 50px 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bear {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .bear-face {
+            width: 100px;
+            height: 100px;
+            background: #D4A574;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .bear-ear {
+            width: 35px;
+            height: 35px;
+            background: #D4A574;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+        }
+
+        .bear-ear.left {
+            left: -5px;
+        }
+
+        .bear-ear.right {
+            right: -5px;
+        }
+
+        .bear-eyes {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .eye {
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .bear-nose {
+            width: 15px;
+            height: 12px;
+            background: #000;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 10px auto 0;
+        }
+
+        .heart {
+            position: absolute;
+            top: -10px;
+            right: -15px;
+            font-size: 40px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .buttons {
+            position: relative;
+            min-height: 60px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #yesBtn {
+            background: #FF6B9D;
+            color: white;
+            transform: scale(1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            z-index: 5;
+        }
+
+        #yesBtn:hover {
+            background: #FF4081;
+            transform: scale(1.05);
+        }
+
+        #noBtn {
+            background: #E0E0E0;
+            color: #666;
+            position: fixed;
+            transition: all 0.2s ease;
+            z-index: 1;
+        }
+
+        #noBtn:hover {
+            background: #D0D0D0;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        .celebration {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .celebration.show {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .celebration h2 {
+            font-size: 48px;
+            color: #FF6B9D;
+            margin-bottom: 30px;
+            animation: bounceIn 0.8s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .celebration img {
+            max-width: 400px;
+            width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+
+            .celebration h2 {
+                font-size: 36px;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="bear">
+                <div class="heart">💗</div>
+                <div class="bear-face">
+                    <div class="bear-ear left"></div>
+                    <div class="bear-ear right"></div>
+                    <div class="bear-eyes">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                    </div>
+                    <div class="bear-nose"></div>
+                </div>
+            </div>
+
+            <h1>Hamda will you be my valentine?</h1>
+
+            <div class="buttons">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+
+            <div class="footer-text">No? wanna a bit eh 😉</div>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <h2>Yay! I knew you'd say yes! 💕</h2>
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWVnOTc0bTJmMHBrc280c2J5amNoaWJlNHNpYmwwdDhqM2d2Y2NwYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yJFeycRK2DB4c/giphy.gif" alt="Celebration">
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const celebration = document.getElementById('celebration');
+        const card = document.querySelector('.card');
+        let yesBtnScale = 1;
+        let noBtnInitialized = false;
+
+        // Function to get initial position for No button (next to Yes button)
+        function setInitialPosition() {
+            const yesRect = yesBtn.getBoundingClientRect();
+            noBtn.style.left = (yesRect.right + 20) + 'px';
+            noBtn.style.top = yesRect.top + 'px';
+            noBtnInitialized = true;
+        }
+
+        // Function to move the "No" button to a random position
+        function moveNoButton() {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const btnWidth = noBtn.offsetWidth;
+            const btnHeight = noBtn.offsetHeight;
+            const cardRect = card.getBoundingClientRect();
+
+            let randomX, randomY;
+            let attempts = 0;
+
+            // Keep trying until we find a position not overlapping with the card
+            do {
+                randomX = Math.random() * (windowWidth - btnWidth - 40) + 20;
+                randomY = Math.random() * (windowHeight - btnHeight - 40) + 20;
+                attempts++;
+            } while (
+                attempts < 10 &&
+                randomX > cardRect.left - 100 &&
+                randomX < cardRect.right + 100 &&
+                randomY > cardRect.top - 100 &&
+                randomY < cardRect.bottom + 100
+            );
+
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+
+            // Make the Yes button bigger each time
+            yesBtnScale += 0.1;
+            yesBtn.style.transform = `scale(${yesBtnScale})`;
+        }
+
+        // Move button on hover
+        noBtn.addEventListener('mouseenter', moveNoButton);
+
+        // Move button on touch (for mobile)
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // Try to click? Move it away!
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // Yes button - show celebration
+        yesBtn.addEventListener('click', () => {
+            celebration.classList.add('show');
+        });
+
+        // Initialize No button position when page loads
+        window.addEventListener('load', setInitialPosition);
+        // Backup initialization after a short delay
+        setTimeout(setInitialPosition, 100);
+    </script>
+</body>
+</html>

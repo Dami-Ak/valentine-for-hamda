@@ -8,7 +8,7 @@
     <style>
         * {
             margin: 0;
-            padding: 0;a
+            padding: 0;
             box-sizing: border-box;
         }
 
@@ -43,64 +43,19 @@
         }
 
         .bear {
-            width: 120px;
-            height: 120px;
             margin: 0 auto 30px;
             position: relative;
+            display: inline-block;
         }
 
-        .bear-face {
-            width: 100px;
-            height: 100px;
-            background: #D4A574;
-            border-radius: 50%;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .bear-ear {
-            width: 35px;
-            height: 35px;
-            background: #D4A574;
-            border-radius: 50%;
-            position: absolute;
-            top: -10px;
-        }
-
-        .bear-ear.left {
-            left: -5px;
-        }
-
-        .bear-ear.right {
-            right: -5px;
-        }
-
-        .bear-eyes {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .eye {
-            width: 8px;
-            height: 8px;
-            background: #000;
-            border-radius: 50%;
-        }
-
-        .bear-nose {
-            width: 15px;
-            height: 12px;
-            background: #000;
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            margin: 10px auto 0;
+        .bear-emoji {
+            font-size: 100px;
         }
 
         .heart {
             position: absolute;
             top: -10px;
-            right: -15px;
+            right: -20px;
             font-size: 40px;
             animation: heartbeat 1.5s ease-in-out infinite;
         }
@@ -236,16 +191,8 @@
     <div class="container">
         <div class="card">
             <div class="bear">
+                <div class="bear-emoji">🧸</div>
                 <div class="heart">💗</div>
-                <div class="bear-face">
-                    <div class="bear-ear left"></div>
-                    <div class="bear-ear right"></div>
-                    <div class="bear-eyes">
-                        <div class="eye"></div>
-                        <div class="eye"></div>
-                    </div>
-                    <div class="bear-nose"></div>
-                </div>
             </div>
 
             <h1>Hamda will you be my valentine?</h1>
@@ -255,7 +202,7 @@
                 <button id="noBtn">No</button>
             </div>
 
-            <div class="footer-text">No? wanna a bit eh 😉</div>
+            <div class="footer-text">"No" seems a bit shy 😊</div>
         </div>
     </div>
 
